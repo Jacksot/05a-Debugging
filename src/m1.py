@@ -235,12 +235,14 @@ def broken_3(n, point, length, distance_between_lines, window):
     """
     a = rg.Point(point.x, point.y)
     b = rg.Point(point.x, point.y + length)
+    
 
     for k in range(n):
+        a = (a * k) + distance_between_lines
+        b = (b * k) + distance_between_lines
         line = rg.Line(a, b)
         line.attach_to(window)
         window.render(0.5)
-        b = (b * k) + distance_between_lines
 
 
 # -----------------------------------------------------------------------------
